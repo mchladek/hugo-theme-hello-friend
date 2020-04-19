@@ -10,11 +10,9 @@
           {{ .Date.Format ($.Site.Params.DateFormatSingle | default "2006-01-02") }}
         </span>
 
-        {{ if eq .Type $contentTypeName }}
           {{ if $.Site.Params.LastModDisplay }}
             {{ partial "lastmod.html" . }}
           {{ end }}
-        {{ end }}
       {{ end }}
 
       {{ with .Params.Author }}<span class="post-author">— {{ $.Site.Params.WrittenBy | default "Written by" }} {{ . }}</span>{{ end }}
